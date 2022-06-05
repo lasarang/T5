@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactoComponent } from './pages/contacto/contacto.component';
 import { MainComponent } from './components/main/main.component';
 import { HistoriaComponent } from './pages/historia/historia.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -15,6 +14,11 @@ import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo} from 
 import { RecetasComponent } from './pages/recetas/recetas.component';
 import { CertificadosComponent } from './pages/certificados/certificados.component';
 import { CitasComponent } from './pages/citas/citas.component';
+import { PrincipalComponent } from './components/principal/principal.component';
+import { PortadaComponent } from './pages/portada/portada.component';
+import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
+import { ExamenesComponent } from './pages/examenes/examenes.component';
+import { PreguntasComponent } from './pages/preguntas/preguntas.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToItems = () => redirectLoggedInTo(['users/home']);
@@ -26,6 +30,31 @@ const routes: Routes = [
         path: 'login', 
         canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToItems },
         component: LoginComponent, 
+      },
+
+      {
+        path: 'principal',
+        component: PrincipalComponent,
+        children: [
+          {
+            path: 'portada',
+            component: PortadaComponent,
+          },
+    
+          {
+            path: 'especialidades',
+            component: EspecialidadesComponent,
+          },
+          {
+            path: 'examenes',
+            component: ExamenesComponent,
+          },
+          {
+            path: 'preguntas',
+            component: PreguntasComponent,
+          },
+          
+        ],
       },
 
       {
@@ -76,18 +105,13 @@ const routes: Routes = [
             path: 'certificados', 
             component: CertificadosComponent, 
           },
-          {
-            path: 'contacto', 
-            component: ContactoComponent, 
-          },
-    
         ],
       },
       // All your other routes should come first    
 
       {
         path: '**', 
-        redirectTo: 'login', 
+        redirectTo: 'principal/portada', 
         pathMatch: 'full'
       },
      

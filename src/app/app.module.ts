@@ -14,7 +14,7 @@ import { ImagenesComponent } from './pages/imagenes/imagenes.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { OrdenesComponent } from './pages/ordenes/ordenes.component';
-import { ContactoComponent } from './pages/contacto/contacto.component';
+
 
 import { AuthService } from './services/auth/auth.service';
 
@@ -29,6 +29,12 @@ import { ForgotPwdComponent } from './components/forgot-pwd/forgot-pwd.component
 import { CertificadosComponent } from './pages/certificados/certificados.component';
 import { RecetasComponent } from './pages/recetas/recetas.component';
 import { CitasComponent } from './pages/citas/citas.component';
+import { PrincipalComponent } from './components/principal/principal.component';
+import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
+import { ExamenesComponent } from './pages/examenes/examenes.component';
+import { PreguntasComponent } from './pages/preguntas/preguntas.component';
+import { BoletinesComponent } from './pages/boletines/boletines.component';
+import { PortadaComponent } from './pages/portada/portada.component';
 
 @NgModule({
   imports: [ 
@@ -53,11 +59,16 @@ import { CitasComponent } from './pages/citas/citas.component';
      LoginComponent,
      SignupComponent,
      OrdenesComponent,
-     ContactoComponent,
      ForgotPwdComponent,
      CertificadosComponent,
      RecetasComponent,
-     CitasComponent
+     CitasComponent,
+     PrincipalComponent,
+     EspecialidadesComponent,
+     ExamenesComponent,
+     PreguntasComponent,
+     BoletinesComponent,
+     PortadaComponent
     ],
     providers: [
       AuthService,

@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   }
 
   resumen: Resumen = {
-    ordenes: 0,
+    consultas: 0,
     examenes: 0,
     medicamentos: 0,
     imagenes: 0,
@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
   private loadResumen(){
     /* Resumen */
     this.resumen = {
-      ordenes: 20,
+      consultas: 20,
       examenes: 30,
       medicamentos: 10,
       imagenes: 5,

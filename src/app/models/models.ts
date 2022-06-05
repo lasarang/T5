@@ -9,7 +9,7 @@ export interface Info{
 
 /* Home data */
 export interface Resumen{
-    ordenes: number;
+    consultas: number;
     examenes: number;
     medicamentos: number;
     imagenes: number;
