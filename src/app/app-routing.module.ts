@@ -19,6 +19,7 @@ import { PortadaComponent } from './pages/portada/portada.component';
 import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
 import { ExamenesComponent } from './pages/examenes/examenes.component';
 import { PreguntasComponent } from './pages/preguntas/preguntas.component';
+import { ConsultasComponent } from './pages/consultas/consultas.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToItems = () => redirectLoggedInTo(['users/home']);
@@ -44,6 +45,10 @@ const routes: Routes = [
           {
             path: 'especialidades',
             component: EspecialidadesComponent,
+          },
+          {
+            path: 'consultas',
+            component: ConsultasComponent,
           },
           {
             path: 'examenes',

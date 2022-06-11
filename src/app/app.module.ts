@@ -17,7 +17,7 @@ import { OrdenesComponent } from './pages/ordenes/ordenes.component';
 
 
 import { AuthService } from './services/auth/auth.service';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 /*Firebase imports*/
 import { AngularFireModule } from '@angular/fire/compat';
@@ -33,8 +33,9 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
 import { ExamenesComponent } from './pages/examenes/examenes.component';
 import { PreguntasComponent } from './pages/preguntas/preguntas.component';
-import { BoletinesComponent } from './pages/boletines/boletines.component';
+
 import { PortadaComponent } from './pages/portada/portada.component';
+import { ConsultasComponent } from './pages/consultas/consultas.component';
 
 @NgModule({
   imports: [ 
@@ -42,7 +43,7 @@ import { PortadaComponent } from './pages/portada/portada.component';
     FormsModule,
     AppRoutingModule ,
     ReactiveFormsModule,
-    
+    NgMultiSelectDropDownModule.forRoot(),
     //provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
@@ -67,8 +68,8 @@ import { PortadaComponent } from './pages/portada/portada.component';
      EspecialidadesComponent,
      ExamenesComponent,
      PreguntasComponent,
-     BoletinesComponent,
-     PortadaComponent
+     PortadaComponent,
+     ConsultasComponent
     ],
     providers: [
       AuthService,

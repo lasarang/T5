@@ -12,8 +12,8 @@
  
   
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-scrollable modal-xl" role="document">
-      <div class="modal-content">
+    <div class="modal-dialog modal-dialog-scrollable " role="document" >
+      <div class="modal-content" style="height: 1200px">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Nueva Orden</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -25,7 +25,7 @@
               <input type="text" class="form-control" id="recipient-name">
             </div>
 
-            <!-- Example single danger button -->
+            <!-- 
             <div class="btn-group">
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 Bioquímica
@@ -76,7 +76,7 @@
               </ul>
             </div>
 
-             <!-- Example single danger button -->
+            
              <div class="btn-group">
               <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 Hematología
@@ -126,7 +126,27 @@
                 
               </ul>
             </div>
+            -->
+            <ng-multiselect-dropdown
+            [placeholder]="'Bioquimica'"
+            [settings]="dropdownSettings"
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+          >
+          </ng-multiselect-dropdown>
 
+          <ng-multiselect-dropdown
+            [placeholder]="'Hematología'"
+            [settings]="dropdownSettings"
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+          >
+          </ng-multiselect-dropdown>
+            
             
             
     
