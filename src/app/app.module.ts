@@ -16,14 +16,19 @@ import { SignupComponent } from './components/signup/signup.component';
 import { OrdenesComponent } from './pages/ordenes/ordenes.component';
 
 
-import { AuthService } from './services/auth/auth.service';
+//import { AuthService } from './services/auth/auth.service';
+
 
 /*Firebase imports*/
-import { AngularFireModule } from '@angular/fire/compat';
-//import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
+
+//import { AngularFireModule } from '@angular/fire/compat';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
 import { ForgotPwdComponent } from './components/forgot-pwd/forgot-pwd.component';
 import { CertificadosComponent } from './pages/certificados/certificados.component';
 import { RecetasComponent } from './pages/recetas/recetas.component';
@@ -35,6 +40,7 @@ import { PreguntasComponent } from './pages/preguntas/preguntas.component';
 
 import { PortadaComponent } from './pages/portada/portada.component';
 import { ConsultasComponent } from './pages/consultas/consultas.component';
+//import { FirestoreService } from './services/firestore/firestore.service';
 
 @NgModule({
   imports: [ 
@@ -42,10 +48,10 @@ import { ConsultasComponent } from './pages/consultas/consultas.component';
     FormsModule,
     AppRoutingModule ,
     ReactiveFormsModule,
-    //provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    AngularFireModule.initializeApp(environment.firebase)
+    //AngularFireModule.initializeApp(environment.firebase),
 
   ],
   declarations: [ 
@@ -70,8 +76,10 @@ import { ConsultasComponent } from './pages/consultas/consultas.component';
      ConsultasComponent
     ],
     providers: [
-      AuthService,
+
+      { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
     ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
+
