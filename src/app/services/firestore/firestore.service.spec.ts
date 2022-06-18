@@ -11,6 +11,7 @@ describe('FirestoreService', () => {
   });
 
   it('should be created', () => {
+    //service = TestBed.inject(FirestoreService);
     expect(service).toBeTruthy();
   });
 });
