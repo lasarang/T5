@@ -17,7 +17,6 @@ import { OrdenesComponent } from './pages/ordenes/ordenes.component';
 
 
 import { AuthService } from './services/auth/auth.service';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 /*Firebase imports*/
 import { AngularFireModule } from '@angular/fire/compat';
@@ -43,7 +42,6 @@ import { ConsultasComponent } from './pages/consultas/consultas.component';
     FormsModule,
     AppRoutingModule ,
     ReactiveFormsModule,
-    NgMultiSelectDropDownModule.forRoot(),
     //provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
