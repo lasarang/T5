@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/models/models';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { FirestoreService } from 'src/app/services/firestore/firestore.service';
 
@@ -10,55 +10,50 @@ import { FirestoreService } from 'src/app/services/firestore/firestore.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  registerForm = new FormGroup({
-    nombres: new FormControl(''),
-    apellidos: new FormControl(''),
-    telefono: new FormControl(''),
-    email: new FormControl(''),
-    cedula: new FormControl(''),
-    direccion: new FormControl(''),
-    pwd: new FormControl(''),
-    rptpwd: new FormControl(''),
-  });
 
-  constructor(private router:Router, 
+  password: string = '';
+  repeatPassword: string = '';
+
+  newUser: Usuario = {
+    cedula: '',
+    nombres: '',
+    apellidos: '',
+    telefono: '',
+    email: '',
+    direccion: '',
+    fechaNacimiento: '',
+    generoLegal: '',
+    estadoCivil: '',
+    seguro: '',
+    ocupacion: '',
+    discapacidad: '',
+    grupoSanguineo: '',
+    talla: 0,
+    peso: 0,
+    id:'' 
+  }
+
+  constructor(
+    private router: Router,
     private authService: AuthService,
-    private afs: FirestoreService
-    ) { }
+    private firestoreService: FirestoreService
+  ) { }
 
   ngOnInit() {}
 
-  onRegister(){
-    const {cedula, nombres, apellidos, telefono, email, direccion, pwd, rptpwd} = this.registerForm.value;
-    // console.log(this.registerForm.value);
-    this.authService.register(email, rptpwd).then(res =>{
-      if(res?.user != null && pwd ==rptpwd){
-        this.afs.createDocId(
-          {
-            cedula: cedula,
-            nombres: nombres,
-            apellidos: apellidos,
-            telefono: telefono,
-            email: email,
-            direccion: direccion,
-            password: rptpwd,
-    
-            dob: '',
-            groLegal: '',
-            estadoCivil: '',
-            seguro: '',
-            ocupacion: '',
-            discapacidad: '',
-            gpoSanguineo: '',
-            talla: 0,
-            peso: 0,
-            id: res.user.uid
+  onRegister() {
+    this.authService.register(this.newUser.email, this.repeatPassword)
+      .then(res => {
+          if ((res?.user != null) && (this.password == this.repeatPassword)) {
+            this.newUser.id = res.user.uid;
+            this.firestoreService.createDocId(this.newUser, "users", res.user.uid);
           }
-          , "users", res.user.uid );
-      }
-    });
-     
-    //console.log({email, rptpwd});
+        })
+
+       this.moveToLogin();
+  }
+
+  private moveToLogin(){
     this.router.navigate(['/login']);
   }
 

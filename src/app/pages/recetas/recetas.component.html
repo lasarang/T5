@@ -1,79 +1,32 @@
 <div class="container">
-    <h4 class="mb-3">Recetas</h4>
-  
-    <div class="table-responsive">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Fecha de emision</th>
-            <th scope="col">Ordenado por</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of recetas; let i = index">
-            <td lass="sorting_1">{{ item.femision }}</td>
-            <td lass="sorting_1">{{ item.medico }}</td>
-            <td lass="sorting_1">
-              <button
-                (click)="setUrl(item.url)"
-                class="btn btn-datatable btn-icon btn-transparent-dark mr-2"
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20 6L9 17L4 12"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </td>
-  
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <h4 class="mb-3">Recetas</h4>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Fecha de emision</th>
+          <th scope="col">Ordenado por</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of recetas; let i = index">
+          <td lass="sorting_1">{{ item.fechaEmision }}</td>
+          <td lass="sorting_1">{{ item.medico }}</td>
+          <td lass="sorting_1">
+            <button (click)="setUrl(item.url)" class="btn btn-datatable btn-icon btn-transparent-dark mr-2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 6L9 17L4 12" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </td>
+
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  
-  <iframe *ngIf="currentUrl != ''" [src]="currentUrl" width="100%" height="500px">
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </iframe>  
+</div>
+
+<iframe *ngIf="urlReceta != ''" [src]="this.urlReceta | safe" width="100%" height="500px">

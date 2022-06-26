@@ -7,47 +7,34 @@ import { FirestoreService } from 'src/app/services/firestore/firestore.service';
 @Component({
   selector: 'app-citas',
   templateUrl: './citas.component.html',
-  styleUrls: ['./citas.component.css']
 })
 export class CitasComponent implements OnInit {
 
-  citas: Cita[]=[];
+  citas: Cita[] = [];
 
   constructor(
     private authService: AuthService,
-    private afs: FirestoreService
+    private firestoreService: FirestoreService
   ) { }
 
   ngOnInit() {
-    //Cargando las ordenes
     this.loadOrdenes();
   }
 
-  private loadOrdenes(){
+  private loadOrdenes() {
     this.authService.userData.pipe(
       switchMap(auth => {
         if (auth) {
-            return this.afs.getCollection('users/'+auth.uid+'/citas/');
+
+          return this.firestoreService.getCollection(`users/${auth.uid}/citas/`);
         } else {
-            return [];
+          return [];
         }
       })
-    ).subscribe(citas =>{
+    ).subscribe(citas => {
       this.citas = citas as Cita[];
     });
 
-  }
-
-  setUserColor(state:any) {
-    switch (state) {
-      case 'Pendiente':
-        return 'rgb(51, 108, 251)';
-      case 'En proceso':
-        return 'rgb(52, 238, 174)';
-      case 'Finalizado':
-        return 'rgb(255, 126, 119)';
-    }
-    return;
   }
 
 }

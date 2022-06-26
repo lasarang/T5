@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
@@ -9,15 +8,21 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./forgot-pwd.component.css']
 })
 export class ForgotPwdComponent implements OnInit {
-  userEmail: string='';
+  email: string = '';
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  onReset(){
-    console.log("Enviando solicitud de cambio de contraseña al correo...");
-    this.auth.resetPwd(this.userEmail);
+  onReset() {
+    this.auth.resetPwd(this.email);
+    this.moveToLogin();
+  }
+
+  private moveToLogin() {
     this.router.navigate(['/login']);
   }
 

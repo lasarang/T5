@@ -5,18 +5,22 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router, 
-    private afAuth: AuthService
-    ) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  logOut(){
-    this.afAuth.logout();
+  logOut() {
+    this.authService.logout();
+    this.moveToLogin();
+  }
+
+  private moveToLogin() {
     this.router.navigate(['/login']);
   }
 

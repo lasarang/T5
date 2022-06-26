@@ -10,7 +10,7 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-       
+
       ],
     }).compileComponents();
   });
@@ -27,5 +27,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('medical-app');
   });
 
-  
 });

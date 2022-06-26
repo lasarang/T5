@@ -10,30 +10,29 @@ import { Imagen } from '../../models/models';
   styleUrls: ['./imagenes.component.css']
 })
 export class ImagenesComponent implements OnInit {
-  imagenes: Imagen[]=[];
+  imagenes: Imagen[] = [];
 
   constructor(
-      private authService: AuthService,
-      private afs: FirestoreService
+    private authService: AuthService,
+    private firestoreService: FirestoreService
   ) { }
 
   ngOnInit() {
     this.loadImagenes();
   }
 
-  private loadImagenes(){
+  private loadImagenes() {
     this.authService.userData.pipe(
       switchMap(auth => {
         if (auth) {
-          return this.afs.getCollection('users/'+auth.uid+'/imagenes/')
+          return this.firestoreService.getCollection(`users/${auth.uid }/imagenes/`)
         } else {
-            return [];
+          return [];
         }
       })
-    ).subscribe(imagenes =>{
+    ).subscribe(imagenes => {
       this.imagenes = imagenes as Imagen[];
     });
   }
-
 
 }

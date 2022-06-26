@@ -8,9 +8,9 @@ describe('PortadaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PortadaComponent ]
+      declarations: [PortadaComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

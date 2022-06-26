@@ -1,11 +1,8 @@
-/*Angular Components*/
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
-
-/*Components*/
 import { AppComponent } from './app.component';
 import { HistoriaComponent } from './pages/historia/historia.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,15 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { OrdenesComponent } from './pages/ordenes/ordenes.component';
 
-
-//import { AuthService } from './services/auth/auth.service';
-
-
-/*Firebase imports*/
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
-
-//import { AngularFireModule } from '@angular/fire/compat';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -41,20 +31,18 @@ import { PreguntasComponent } from './pages/preguntas/preguntas.component';
 
 import { PortadaComponent } from './pages/portada/portada.component';
 import { ConsultasComponent } from './pages/consultas/consultas.component';
-//import { FirestoreService } from './services/firestore/firestore.service';
+import { LabResultsComponent } from './pages/lab-results/lab-results.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   imports: [ 
     BrowserModule, 
-    FormsModule,
-    
+    FormsModule, 
     AppRoutingModule ,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    //AngularFireModule.initializeApp(environment.firebase),
-
   ],
   declarations: [ 
      AppComponent,
@@ -75,7 +63,9 @@ import { ConsultasComponent } from './pages/consultas/consultas.component';
      ExamenesComponent,
      PreguntasComponent,
      PortadaComponent,
-     ConsultasComponent
+     ConsultasComponent,
+     LabResultsComponent,
+     SafePipe,
     ],
     providers: [
 
