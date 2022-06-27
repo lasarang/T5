@@ -8,6 +8,7 @@ import { FirestoreService } from 'src/app/services/firestore/firestore.service';
   styleUrls: ['../portada/portada.component.css']
 })
 export class ConsultasComponent implements OnInit {
+  successAlert: boolean = false;
 
   solicitudConsulta: SolicitudConsulta = {
     cedula: '',
@@ -28,7 +29,16 @@ export class ConsultasComponent implements OnInit {
     var delBtn = confirm('¿Está seguro que desea enviar esta solicitud de consulta?');
     if (delBtn == true) {
       this.firestoreService.createDoc(this.solicitudConsulta, 'consultas');
+      this.enableSuccessAlert();
     }
+  }
+
+  enableSuccessAlert(){
+    this.successAlert = true;
+  }
+
+  disableSuccessAlert(){
+    this.successAlert = false;
   }
 
 }
