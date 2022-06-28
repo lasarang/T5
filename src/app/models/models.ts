@@ -126,7 +126,7 @@ export interface Familiar {
 }
 
 export interface Cirugia {
-  id: string
+  id: string;
   cie10: string;
   cirugia: string;
 }
