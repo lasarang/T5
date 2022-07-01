@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, RouterEvent } from "@angular/router";
+import { timer } from "rxjs";
 import { Usuario } from "src/app/models/models";
 import { AuthService } from "src/app/services/auth/auth.service";
 import { FirestoreService } from "src/app/services/firestore/firestore.service";
@@ -10,6 +11,7 @@ import { FirestoreService } from "src/app/services/firestore/firestore.service";
   styleUrls: ["./signup.component.css"],
 })
 export class SignupComponent {
+  successAlert: boolean = false;
   password: string = "";
   repeatPassword: string = "";
 
@@ -52,7 +54,18 @@ export class SignupComponent {
         }
       });
 
-    this.moveToLogin();
+    this.enableSuccessAlert();
+    setTimeout(() => {
+      this.moveToLogin();
+    }, 2500);
+  }
+
+  enableSuccessAlert() {
+    this.successAlert = true;
+  }
+
+  disableSuccessAlert() {
+    this.successAlert = false;
   }
 
   private moveToLogin() {

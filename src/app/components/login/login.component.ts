@@ -8,6 +8,7 @@ import { AuthService } from "../../services/auth/auth.service";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent {
+  unsuccessAlert: boolean = false;
   email: string = "";
   password: string = "";
 
@@ -17,7 +18,17 @@ export class LoginComponent {
     const user = await this.authService.login(this.email, this.password);
     if (user) {
       this.moveToHome();
+    }else{
+      this.enableUnsuccessAlert();
     }
+  }
+
+  enableUnsuccessAlert() {
+    this.unsuccessAlert = true;
+  }
+
+  disableUnsuccessAlert() {
+    this.unsuccessAlert = false;
   }
 
   private moveToHome() {
