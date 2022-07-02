@@ -25,8 +25,8 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(' Login successful ', () =>{
-    component.email ='mauricioortizlascano@gmail.com';
+  it(' Login successful ', () => {
+    component.email = 'mauricioortizlascano@gmail.com';
     component.password = '12345678';
 
     const btn = fixture.debugElement.query(By.css('button.btn-lg'));
