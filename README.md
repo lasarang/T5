@@ -48,6 +48,7 @@ First enter to your Firebase console project settings `https://console.firebase.
 ![alt text](https://github.com/lasarang/T5/blob/main/assets/remote_deploy_1.png?raw=true)
 
 Once you're logged, in the section 'Your apps' select 'Medical App' and and make sure that in 'Linked Firebase Hosting' is selected with `medical-app-8cdb7`.
+![alt text](https://github.com/lasarang/T5/blob/main/assets/remote_deploy_2.png?raw=true)
 
 Then, in the top of this repo there is a the last commit code with an icon of the status of the build, click on it and select 'Details'. 
 
