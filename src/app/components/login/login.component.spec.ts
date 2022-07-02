@@ -24,7 +24,7 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
   it(' Login successful ', () =>{
     component.email ='mauricioortizlascano@gmail.com';
     component.password = '12345678';
@@ -64,5 +64,4 @@ describe('LoginComponent', () => {
 
     expect(component.unsuccessAlert).toBeTrue();
   });
-  
 });
