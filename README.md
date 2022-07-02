@@ -54,6 +54,7 @@ Then, in the top of this repo there is a the last commit code with an icon of th
 
 Try with `Re-run-jobs` and choose `Re-run all jobs`. Suddenly, the project will start to be built.
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/remote_deploy_3.png?raw=true)
 
 It will execute `npm ci` that replaces local command `npm install`.
 Also, test cases will be used checked with `npm test`.
@@ -62,7 +63,11 @@ After that, it will run `npm build` for the construction of the project.
 
 However, for keep a clean code standards will be executed the `npm run lint && npm run prettier`.
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/remote_deploy_4.png?raw=true)
+
 Finally, the FirebaseExtended/action-hosting-deploy@v0 would verify the Deploying to production site and will provide an address: `https://medical-app-8cdb7.web.app/`, so you can use the app everywhere.
+
+![alt text](https://github.com/lasarang/T5/blob/main/assets/remote_deploy_5.png?raw=true)
 ## User Manual
 ###Landing Page
 #### Cover page
