@@ -1,79 +1,99 @@
 <p>consultas works!</p>
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-
   <div class="carousel-inner">
     <div class="carousel-item active">
-
-
-      <img class="bd-placeholder-img" src="https://www.registrarcorp.com/wp-content/uploads/2018/01/guidance-on-medical-device.jpg" width="100%"
-        height="100%" xmlns="http://www.w3.org/2000/svg">
+      <img
+        class="bd-placeholder-img"
+        src="https://www.registrarcorp.com/wp-content/uploads/2018/01/guidance-on-medical-device.jpg"
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg" />
 
       <div class="container">
         <div class="carousel-caption text-start">
-          <h1 style="color:black">Consultas</h1>
+          <h1 style="color: black">Consultas</h1>
           <!-- <p style="color:gray">Some representative placeholder content for the first slide of the carousel.</p> -->
           <!-- <p><a class="btn btn-lg btn-primary mt-3" href="#">Sign up today</a></p> -->
         </div>
       </div>
     </div>
-
   </div>
-
 </div>
 
-
 <div class="py-4 container m-auto">
-
-
   <div class="col-lg-6 col-md-8 mx-auto">
     <h1 class="text-center">Solicitud</h1>
 
     <form class="needs-validation" #userForm="ngForm">
       <div class="row g-3">
-        <div *ngIf="successAlert" class="alert alert-success alert-dismissible fade show" role="alert">
-          <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-          <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-          </symbol>
-        </svg>
+        <div
+          *ngIf="successAlert"
+          class="alert alert-success alert-dismissible fade show"
+          role="alert">
+          <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+            </symbol>
+          </svg>
           Se ha registrado su solicitud con éxito!
-          <button (click)="disableSuccessAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
+          <button
+            (click)="disableSuccessAlert()"
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"></button>
         </div>
 
         <div class="col-12">
           <label for="username" class="form-label">Cédula</label>
           <div class="input-group has-validation">
             <span class="input-group-text">CI</span>
-            <input [(ngModel)]="solicitudConsulta.cedula" name="cedula" type="text" placeholder="XXXXXXXXXX"
-              maxlength="10" pattern="^\d{10}$" class="form-control" required>
-            <div class="invalid-feedback">
-              Your Cédula is required.
-            </div>
+            <input
+              [(ngModel)]="solicitudConsulta.cedula"
+              name="cedula"
+              type="text"
+              placeholder="XXXXXXXXXX"
+              maxlength="10"
+              pattern="^\d{10}$"
+              class="form-control"
+              required />
+            <div class="invalid-feedback">Your Cédula is required.</div>
           </div>
         </div>
 
         <div class="col-sm-6">
           <label for="firstName" class="form-label">Nombres</label>
-          <input [(ngModel)]="solicitudConsulta.nombres" name="nombres" type="text" class="form-control" required>
-          <div class="invalid-feedback">
-            Valid Nombres is required.
-          </div>
+          <input
+            [(ngModel)]="solicitudConsulta.nombres"
+            name="nombres"
+            type="text"
+            class="form-control"
+            required />
+          <div class="invalid-feedback">Valid Nombres is required.</div>
         </div>
 
         <div class="col-sm-6">
           <label for="lastName" class="form-label">Apellidos</label>
-          <input [(ngModel)]="solicitudConsulta.apellidos" name="apellidos" type="text" class="form-control" required>
-          <div class="invalid-feedback">
-            Valid Apellidos is required.
-          </div>
+          <input
+            [(ngModel)]="solicitudConsulta.apellidos"
+            name="apellidos"
+            type="text"
+            class="form-control"
+            required />
+          <div class="invalid-feedback">Valid Apellidos is required.</div>
         </div>
 
         <div class="col-sm-6">
           <label for="email" class="form-label">Email</label>
-          <input [(ngModel)]="solicitudConsulta.email" name="email"
-            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" type="email" class="form-control"
-            placeholder="you@example.com" required>
+          <input
+            [(ngModel)]="solicitudConsulta.email"
+            name="email"
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            type="email"
+            class="form-control"
+            placeholder="you@example.com"
+            required />
           <div class="invalid-feedback">
             Please enter a valid email address.
           </div>
@@ -81,60 +101,82 @@
 
         <div class="col-sm-6">
           <label for="zip" class="form-label">Teléfono</label>
-          <input [(ngModel)]="solicitudConsulta.telefono" name="telefono" type="text" class="form-control" required>
-          <div class="invalid-feedback">
-            Telefono is required.
-          </div>
+          <input
+            [(ngModel)]="solicitudConsulta.telefono"
+            name="telefono"
+            type="text"
+            class="form-control"
+            required />
+          <div class="invalid-feedback">Telefono is required.</div>
         </div>
 
         <div class="col-md-6">
           <label for="lastName" class="form-label">Fecha</label>
-          <input [(ngModel)]="solicitudConsulta.fecha" name="fecha" type="date" class="form-control" required>
-          <div class="invalid-feedback">
-            Valid Fecha is required.
-          </div>
+          <input
+            [(ngModel)]="solicitudConsulta.fecha"
+            name="fecha"
+            type="date"
+            class="form-control"
+            required />
+          <div class="invalid-feedback">Valid Fecha is required.</div>
         </div>
 
         <div class="col-md-6">
           <label for="state" class="form-label">Área</label>
-          <select [(ngModel)]="solicitudConsulta.area" name="area" class="form-select" required>
+          <select
+            [(ngModel)]="solicitudConsulta.area"
+            name="area"
+            class="form-select"
+            required>
             <option>Escoja...</option>
-            <option value="Dr. Manuel Zambrano">Medicina general - Dr. Manuel Zambrano</option>
-            <option value="Dr. Andrés Zapata">Endocrinología - Dr. Andrés Zapata</option>
-            <option value="Dr. Robert Mendieta">Cardiología - Dr. Robert Mendieta</option>
-            <option value="Dra. Margorie Coloma">Pediatría - Dra. Margorie Coloma</option>
-            <option value="Dr. Luis S Masache">Laboratorio - Dr. Luis S Masache</option>
-            <option value="Dr. Ernesto González">Ginecología - Dr. Ernesto González</option>
-            <option value="Dr. Carlos Parrales">Traumatología - Dr. Carlos Parrales</option>
-            <option value="Dra. Sara Pin">Rehabilitación física - Dra. Sara Pin</option>
+            <option value="Dr. Manuel Zambrano">
+              Medicina general - Dr. Manuel Zambrano
+            </option>
+            <option value="Dr. Andrés Zapata">
+              Endocrinología - Dr. Andrés Zapata
+            </option>
+            <option value="Dr. Robert Mendieta">
+              Cardiología - Dr. Robert Mendieta
+            </option>
+            <option value="Dra. Margorie Coloma">
+              Pediatría - Dra. Margorie Coloma
+            </option>
+            <option value="Dr. Luis S Masache">
+              Laboratorio - Dr. Luis S Masache
+            </option>
+            <option value="Dr. Ernesto González">
+              Ginecología - Dr. Ernesto González
+            </option>
+            <option value="Dr. Carlos Parrales">
+              Traumatología - Dr. Carlos Parrales
+            </option>
+            <option value="Dra. Sara Pin">
+              Rehabilitación física - Dra. Sara Pin
+            </option>
           </select>
-          <div class="invalid-feedback">
-            Please provide a valid area.
-          </div>
+          <div class="invalid-feedback">Please provide a valid area.</div>
         </div>
-
 
         <div class="col-md-12">
           <label for="zip" class="form-label">Motivo</label>
-          <input [(ngModel)]="solicitudConsulta.motivo" name="motivo" type="text-area" class="form-control" required>
-          <div class="invalid-feedback">
-            Motivo required.
-          </div>
+          <input
+            [(ngModel)]="solicitudConsulta.motivo"
+            name="motivo"
+            type="text-area"
+            class="form-control"
+            required />
+          <div class="invalid-feedback">Motivo required.</div>
         </div>
-
       </div>
 
-
-      <hr class="my-4">
-
-
+      <hr class="my-4" />
     </form>
-    <button [disabled]="userForm.form.invalid" (click)="enviarSolicitud()" class="w-100 btn btn-lg btn-primary"
-      type="submit">Enviar</button>
-
+    <button
+      [disabled]="userForm.form.invalid"
+      (click)="enviarSolicitud()"
+      class="w-100 btn btn-lg btn-primary"
+      type="submit">
+      Enviar
+    </button>
   </div>
-
-
-
-
 </div>

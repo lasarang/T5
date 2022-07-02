@@ -1,89 +1,110 @@
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="bd-placeholder-img"
-        src="https://www.smartraveller.gov.au/sites/default/files/2021-04/Medical%20assistance_0.png" width="100%"
-        height="100%" xmlns="http://www.w3.org/2000/svg">
+      <img
+        class="bd-placeholder-img"
+        src="https://www.smartraveller.gov.au/sites/default/files/2021-04/Medical%20assistance_0.png"
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg" />
 
       <div class="container">
         <div class="carousel-caption text-start">
-          <h1 style="color:black">Resultados</h1>
+          <h1 style="color: black">Resultados</h1>
           <!-- <p>Some representative placeholder content for the first slide of the carousel.</p> -->
           <!-- <p><a class="btn btn-lg btn-primary mt-4" href="#">Sign up today</a></p> -->
         </div>
       </div>
     </div>
-
   </div>
-
 </div>
 
-
 <div class="py-4 container m-auto">
-
   <div class="col-lg-6 col-md-8 mx-auto">
     <h1 class="text-center">Consultar resultados</h1>
 
     <form class="needs-validation" #userForm="ngForm" novalidate>
-
       <div class="row g-3">
-
         <div class="col-12">
-          <div *ngIf="unsuccessAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-              <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          <div
+            *ngIf="unsuccessAlert"
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+              <symbol
+                id="exclamation-triangle-fill"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
               </symbol>
-           </svg>
+            </svg>
             No se han encontrado sus resultados!
-            <button (click)="disableUnsuccessAlert()"type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  
+            <button
+              (click)="disableUnsuccessAlert()"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"></button>
           </div>
-          <div *ngIf="successAlert" class="alert alert-success alert-dismissible fade show" role="alert">
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-              <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          <div
+            *ngIf="successAlert"
+            class="alert alert-success alert-dismissible fade show"
+            role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+              <symbol
+                id="exclamation-triangle-fill"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
               </symbol>
-           </svg>
+            </svg>
             Se han encontrado sus resultados, pulse Mostrar!
-            <button (click)="disableSuccessAlert()"type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  
+            <button
+              (click)="disableSuccessAlert()"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"></button>
           </div>
 
           <label for="cedula" class="form-label">Orden de examen</label>
-         
+
           <div class="input-group has-validation">
             <span class="input-group-text">ID</span>
-            <input [(ngModel)]="this.idOrden" name="idOrden" type="text" placeholder="Ingrese el código de su orden"
-              class="form-control" required>
-            <div class="invalid-feedback">
-              Your idOrden is required.
-            </div>
+            <input
+              [(ngModel)]="this.idOrden"
+              name="idOrden"
+              type="text"
+              placeholder="Ingrese el código de su orden"
+              class="form-control"
+              required />
+            <div class="invalid-feedback">Your idOrden is required.</div>
           </div>
         </div>
-        
-        
-
       </div>
 
-
-      <hr class="my-4">
-
-
+      <hr class="my-4" />
     </form>
-
 
     <div class="row justify-content-end">
       <div class="col-4">
-        <button [disabled]="userForm.form.invalid" (click)="enviarSolicitud()" class="w-100 btn btn-lg btn-primary"
-          type="submit">Enviar</button>
+        <button
+          [disabled]="userForm.form.invalid"
+          (click)="enviarSolicitud()"
+          class="w-100 btn btn-lg btn-primary"
+          type="submit">
+          Enviar
+        </button>
       </div>
       <div class="col-4">
-        <p *ngIf="urlResultado !== ''"><a class="btn btn-lg btn-success" [href]="this.urlResultado | safe">Mostrar</a></p>
+        <p *ngIf="urlResultado !== ''">
+          <a class="btn btn-lg btn-success" [href]="this.urlResultado | safe"
+            >Mostrar</a
+          >
+        </p>
       </div>
-
     </div>
   </div>
-
 </div>

@@ -2,28 +2,27 @@
   <div class="container">
     <h4 class="mb-3">Imágenes</h4>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
-
       <div *ngFor="let item of imagenes; let i = index" class="col">
         <div class="card border-dark mb-3">
           <div class="card-header">
-            {{item.titulo}}
+            {{ item.titulo }}
           </div>
 
-          <img class="card-img-top" src="{{item.url}}">
+          <img class="card-img-top" src="{{ item.url }}" />
 
           <div class="card-body">
-            <p class="card-text">{{item.descripcion}}</p>
+            <p class="card-text">{{ item.descripcion }}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  Ver
+                </button>
               </div>
-              <small class="text-muted">{{item.fechaHora}}</small>
+              <small class="text-muted">{{ item.fechaHora }}</small>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 </div>

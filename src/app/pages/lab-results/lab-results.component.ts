@@ -1,29 +1,29 @@
-import { Component } from "@angular/core";
-import { Resultado } from "src/app/models/models";
-import { FirestoreService } from "src/app/services/firestore/firestore.service";
+import { Component } from '@angular/core';
+import { Resultado } from 'src/app/models/models';
+import { FirestoreService } from 'src/app/services/firestore/firestore.service';
 
 @Component({
-  selector: "app-lab-results",
-  templateUrl: "./lab-results.component.html",
-  styleUrls: ["../portada/portada.component.css"],
+  selector: 'app-lab-results',
+  templateUrl: './lab-results.component.html',
+  styleUrls: ['../portada/portada.component.css'],
 })
 export class LabResultsComponent {
   successAlert: boolean = false;
   unsuccessAlert: boolean = false;
-  idOrden: string = "";
-  urlResultado: string = "";
+  idOrden: string = '';
+  urlResultado: string = '';
 
   constructor(private firestoreService: FirestoreService) {}
 
   enviarSolicitud() {
     var delBtn = confirm(
-      "¿Está seguro que desea enviar esta solicitud de resultados?"
+      '¿Está seguro que desea enviar esta solicitud de resultados?'
     );
 
     if (delBtn == true) {
       this.firestoreService
-        .getDoc("examenes", this.idOrden)
-        .subscribe((resultado) => {
+        .getDoc('examenes', this.idOrden)
+        .subscribe(resultado => {
           try {
             const url = (resultado as Resultado).urlResultado;
             if (url) this.urlResultado = url;

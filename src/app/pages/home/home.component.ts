@@ -1,31 +1,31 @@
-import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../../services/auth/auth.service";
-import { FirestoreService } from "../../services/firestore/firestore.service";
-import { Contacto, Resumen, Usuario } from "../../models/models";
-import { switchMap } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth/auth.service';
+import { FirestoreService } from '../../services/firestore/firestore.service';
+import { Contacto, Resumen, Usuario } from '../../models/models';
+import { switchMap } from 'rxjs';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
+  selector: 'app-home',
+  templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
   usuario: Usuario = {
-    cedula: "",
-    nombres: "",
-    apellidos: "",
-    direccion: "",
-    telefono: "",
-    email: "",
-    fechaNacimiento: "",
-    generoLegal: "",
-    estadoCivil: "",
-    seguro: "",
-    ocupacion: "",
-    discapacidad: "",
-    grupoSanguineo: "",
+    cedula: '',
+    nombres: '',
+    apellidos: '',
+    direccion: '',
+    telefono: '',
+    email: '',
+    fechaNacimiento: '',
+    generoLegal: '',
+    estadoCivil: '',
+    seguro: '',
+    ocupacion: '',
+    discapacidad: '',
+    grupoSanguineo: '',
     talla: 0,
     peso: 0,
-    id: "",
+    id: '',
   };
 
   resumen: Resumen = {
@@ -51,15 +51,15 @@ export class HomeComponent implements OnInit {
   private loadUsuario() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
-            return this.firestoreService.getDoc("users", auth.uid);
+            return this.firestoreService.getDoc('users', auth.uid);
           } else {
             return [];
           }
         })
       )
-      .subscribe((user) => {
+      .subscribe(user => {
         this.usuario = user as Usuario;
       });
   }
@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
   private loadContactos() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/contactos/`
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
           }
         })
       )
-      .subscribe((contactos) => {
+      .subscribe(contactos => {
         this.contactos = contactos as Contacto[];
       });
   }
@@ -92,28 +92,28 @@ export class HomeComponent implements OnInit {
   }
 
   updateRowInfo() {
-    var delBtn = confirm("¿Está seguro que desea guardar los datos?");
+    var delBtn = confirm('¿Está seguro que desea guardar los datos?');
     if (delBtn == true) {
-      this.firestoreService.updateDoc("users", this.usuario.id, this.usuario);
+      this.firestoreService.updateDoc('users', this.usuario.id, this.usuario);
     }
   }
 
   addTableContactos() {
     this.contactos.push({
-      id: "",
-      relacion: "nuevo",
-      nombres: "nuevo",
-      apellidos: "nuevo",
-      direccion: "nuevo",
-      telefono: "nuevo",
-      email: "nuevo",
+      id: '',
+      relacion: 'nuevo',
+      nombres: 'nuevo',
+      apellidos: 'nuevo',
+      direccion: 'nuevo',
+      telefono: 'nuevo',
+      email: 'nuevo',
     });
   }
 
   deleteRowContactos(x: Contacto, i: any) {
-    var delBtn = confirm("¿Está seguro de eliminar este registro?");
+    var delBtn = confirm('¿Está seguro de eliminar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.contactos.splice(i, 1);
         return;
       }
@@ -125,11 +125,11 @@ export class HomeComponent implements OnInit {
   }
 
   updateRowContactos(x: Contacto) {
-    var delBtn = confirm("¿Está seguro que desea guardar este registro?");
+    var delBtn = confirm('¿Está seguro que desea guardar este registro?');
     if (delBtn == true) {
       if (this.isContactoValid(x)) {
         this.createNewContacto(x);
-      } else if (x.id != "") {
+      } else if (x.id != '') {
         this.firestoreService.updateDoc(
           `users/${this.usuario.id}/contactos/`,
           x.id,
@@ -151,19 +151,19 @@ export class HomeComponent implements OnInit {
 
   isContactoValid(x: Contacto): boolean {
     return (
-      x.relacion != "nuevo" &&
-      x.relacion != "" &&
-      x.nombres != "nuevo" &&
-      x.nombres != "" &&
-      x.apellidos != "nuevo" &&
-      x.apellidos != "" &&
-      x.direccion != "nuevo" &&
-      x.direccion != "" &&
-      x.email != "nuevo" &&
-      x.email != "" &&
-      x.telefono != "nuevo" &&
-      x.telefono != "" &&
-      x.id == ""
+      x.relacion != 'nuevo' &&
+      x.relacion != '' &&
+      x.nombres != 'nuevo' &&
+      x.nombres != '' &&
+      x.apellidos != 'nuevo' &&
+      x.apellidos != '' &&
+      x.direccion != 'nuevo' &&
+      x.direccion != '' &&
+      x.email != 'nuevo' &&
+      x.email != '' &&
+      x.telefono != 'nuevo' &&
+      x.telefono != '' &&
+      x.id == ''
     );
   }
 }

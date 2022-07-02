@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { Receta } from "src/app/models/models";
-import { switchMap } from "rxjs";
-import { AuthService } from "src/app/services/auth/auth.service";
-import { FirestoreService } from "src/app/services/firestore/firestore.service";
+import { Component, OnInit } from '@angular/core';
+import { Receta } from 'src/app/models/models';
+import { switchMap } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { FirestoreService } from 'src/app/services/firestore/firestore.service';
 
 @Component({
-  selector: "app-recetas",
-  templateUrl: "./recetas.component.html",
+  selector: 'app-recetas',
+  templateUrl: './recetas.component.html',
 })
 export class RecetasComponent implements OnInit {
   recetas: Receta[] = [];
-  urlReceta: string = "";
+  urlReceta: string = '';
 
   constructor(
     private authService: AuthService,
@@ -24,7 +24,7 @@ export class RecetasComponent implements OnInit {
   private loadRecetas() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/recetas/`
@@ -34,7 +34,7 @@ export class RecetasComponent implements OnInit {
           }
         })
       )
-      .subscribe((recetas) => {
+      .subscribe(recetas => {
         this.recetas = recetas as Receta[];
       });
   }

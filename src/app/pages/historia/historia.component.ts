@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { switchMap } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs';
 import {
   Alergia,
   Cirugia,
@@ -7,16 +7,16 @@ import {
   Inmunizacion,
   Medicacion,
   Personal,
-} from "src/app/models/models";
-import { AuthService } from "src/app/services/auth/auth.service";
-import { FirestoreService } from "src/app/services/firestore/firestore.service";
+} from 'src/app/models/models';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { FirestoreService } from 'src/app/services/firestore/firestore.service';
 
 @Component({
-  selector: "app-historia",
-  templateUrl: "./historia.component.html",
+  selector: 'app-historia',
+  templateUrl: './historia.component.html',
 })
 export class HistoriaComponent implements OnInit {
-  uid: string = "";
+  uid: string = '';
   personales: Personal[] = [];
   familiares: Familiar[] = [];
   cirugias: Cirugia[] = [];
@@ -41,7 +41,7 @@ export class HistoriaComponent implements OnInit {
   private loadPersonales() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             this.uid = auth.uid;
 
@@ -53,7 +53,7 @@ export class HistoriaComponent implements OnInit {
           }
         })
       )
-      .subscribe((personales) => {
+      .subscribe(personales => {
         this.personales = personales as Personal[];
       });
   }
@@ -61,7 +61,7 @@ export class HistoriaComponent implements OnInit {
   private loadFamiliares() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/familiares/`
@@ -71,7 +71,7 @@ export class HistoriaComponent implements OnInit {
           }
         })
       )
-      .subscribe((familiares) => {
+      .subscribe(familiares => {
         this.familiares = familiares as Familiar[];
       });
   }
@@ -79,7 +79,7 @@ export class HistoriaComponent implements OnInit {
   private loadCirugias() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/cirugias/`
@@ -89,7 +89,7 @@ export class HistoriaComponent implements OnInit {
           }
         })
       )
-      .subscribe((cirugias) => {
+      .subscribe(cirugias => {
         this.cirugias = cirugias as Cirugia[];
       });
   }
@@ -97,7 +97,7 @@ export class HistoriaComponent implements OnInit {
   private loadAlergias() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/alergias/`
@@ -107,7 +107,7 @@ export class HistoriaComponent implements OnInit {
           }
         })
       )
-      .subscribe((alergias) => {
+      .subscribe(alergias => {
         this.alergias = alergias as Alergia[];
       });
   }
@@ -115,7 +115,7 @@ export class HistoriaComponent implements OnInit {
   private loadInmunizaciones() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/inmunizaciones/`
@@ -125,7 +125,7 @@ export class HistoriaComponent implements OnInit {
           }
         })
       )
-      .subscribe((inmunizaciones) => {
+      .subscribe(inmunizaciones => {
         this.inmunizaciones = inmunizaciones as Inmunizacion[];
       });
   }
@@ -133,7 +133,7 @@ export class HistoriaComponent implements OnInit {
   private loadMedicaciones() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/medicaciones/`
@@ -143,24 +143,24 @@ export class HistoriaComponent implements OnInit {
           }
         })
       )
-      .subscribe((medicaciones) => {
+      .subscribe(medicaciones => {
         this.medicaciones = medicaciones as Medicacion[];
       });
   }
 
   addTablePersonales() {
     const obj = {
-      id: "",
-      cie10: "nuevo",
-      antecedente: "nuevo",
+      id: '',
+      cie10: 'nuevo',
+      antecedente: 'nuevo',
     };
     this.personales.push(obj);
   }
 
   deleteRowPersonales(x: Personal, i: any) {
-    var delBtn = confirm("¿Está seguro de eliminar este registro?");
+    var delBtn = confirm('¿Está seguro de eliminar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.personales.splice(i, 1);
         return;
       }
@@ -169,11 +169,11 @@ export class HistoriaComponent implements OnInit {
   }
 
   updateRowPersonales(x: Personal) {
-    var delBtn = confirm("¿Está seguro que desea guardar este registro?");
+    var delBtn = confirm('¿Está seguro que desea guardar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.createNewPersonal(x);
-      } else if (x.id != "") {
+      } else if (x.id != '') {
         this.firestoreService.updateDoc(
           `users/${this.uid}/personales/`,
           x.id,
@@ -189,17 +189,17 @@ export class HistoriaComponent implements OnInit {
 
   addTableFamiliares() {
     const obj = {
-      id: "",
-      cie10: "nuevo",
-      antecedente: "nuevo",
+      id: '',
+      cie10: 'nuevo',
+      antecedente: 'nuevo',
     };
     this.familiares.push(obj);
   }
 
   deleteRowFamiliares(x: Familiar, i: any) {
-    var delBtn = confirm("¿Está seguro de eliminar este registro?");
+    var delBtn = confirm('¿Está seguro de eliminar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.familiares.splice(i, 1);
         return;
       }
@@ -208,11 +208,11 @@ export class HistoriaComponent implements OnInit {
   }
 
   updateRowFamiliares(x: Familiar) {
-    var delBtn = confirm("¿Está seguro que desea guardar este registro?");
+    var delBtn = confirm('¿Está seguro que desea guardar este registro?');
     if (delBtn == true) {
       if (this.isFamiliarValid(x)) {
         this.createNewFamiliar(x);
-      } else if (x.id != "") {
+      } else if (x.id != '') {
         this.firestoreService.updateDoc(
           `users/${this.uid}/familiares/`,
           x.id,
@@ -228,27 +228,27 @@ export class HistoriaComponent implements OnInit {
 
   isFamiliarValid(x: Familiar): boolean {
     return (
-      x.cie10 != "nuevo" &&
-      x.cie10 != "" &&
-      x.antecedente != "nuevo" &&
-      x.antecedente != "" &&
-      x.id == ""
+      x.cie10 != 'nuevo' &&
+      x.cie10 != '' &&
+      x.antecedente != 'nuevo' &&
+      x.antecedente != '' &&
+      x.id == ''
     );
   }
 
   addTableCirugias() {
     const obj = {
-      id: "",
-      cie10: "nuevo",
-      cirugia: "nuevo",
+      id: '',
+      cie10: 'nuevo',
+      cirugia: 'nuevo',
     };
     this.cirugias.push(obj);
   }
 
   deleteRowCirugias(x: Cirugia, i: any) {
-    var delBtn = confirm("¿Está seguro de eliminar este registro?");
+    var delBtn = confirm('¿Está seguro de eliminar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.cirugias.splice(i, 1);
         return;
       }
@@ -257,11 +257,11 @@ export class HistoriaComponent implements OnInit {
   }
 
   updateRowCirugias(x: Cirugia) {
-    var delBtn = confirm("¿Está seguro que desea guardar este registro?");
+    var delBtn = confirm('¿Está seguro que desea guardar este registro?');
     if (delBtn == true) {
       if (this.isCirugiaValid(x)) {
         this.createNewCirugia(x);
-      } else if (x.id != "") {
+      } else if (x.id != '') {
         this.firestoreService.updateDoc(`users/${this.uid}/cirugias/`, x.id, x);
       }
     }
@@ -273,27 +273,27 @@ export class HistoriaComponent implements OnInit {
 
   isCirugiaValid(x: Cirugia): boolean {
     return (
-      x.cie10 != "nuevo" &&
-      x.cie10 != "" &&
-      x.cirugia != "nuevo" &&
-      x.cirugia != "" &&
-      x.id == ""
+      x.cie10 != 'nuevo' &&
+      x.cie10 != '' &&
+      x.cirugia != 'nuevo' &&
+      x.cirugia != '' &&
+      x.id == ''
     );
   }
 
   addTableAlergias() {
     const obj = {
-      id: "",
-      cie10: "nuevo",
-      alergia: "nuevo",
+      id: '',
+      cie10: 'nuevo',
+      alergia: 'nuevo',
     };
     this.alergias.push(obj);
   }
 
   deleteRowAlergias(x: Alergia, i: any) {
-    var delBtn = confirm("¿Está seguro de eliminar este registro?");
+    var delBtn = confirm('¿Está seguro de eliminar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.alergias.splice(i, 1);
         return;
       }
@@ -302,11 +302,11 @@ export class HistoriaComponent implements OnInit {
   }
 
   updateRowAlergias(x: Alergia) {
-    var delBtn = confirm("¿Está seguro que desea guardar este registro?");
+    var delBtn = confirm('¿Está seguro que desea guardar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.createNewAlergia(x);
-      } else if (x.id != "") {
+      } else if (x.id != '') {
         this.firestoreService.updateDoc(`users/${this.uid}/alergias/`, x.id, x);
       }
     }
@@ -318,17 +318,17 @@ export class HistoriaComponent implements OnInit {
 
   addTableInmunizaciones() {
     const obj = {
-      id: "",
-      vacuna: "nuevo",
-      descripcion: "nuevo",
+      id: '',
+      vacuna: 'nuevo',
+      descripcion: 'nuevo',
     };
     this.inmunizaciones.push(obj);
   }
 
   deleteRowInmunizaciones(x: Inmunizacion, i: any) {
-    var delBtn = confirm("¿Está seguro de eliminar este registro?");
+    var delBtn = confirm('¿Está seguro de eliminar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.inmunizaciones.splice(i, 1);
         return;
       }
@@ -340,11 +340,11 @@ export class HistoriaComponent implements OnInit {
   }
 
   updateRowInmunizaciones(x: Inmunizacion) {
-    var delBtn = confirm("¿Está seguro que desea guardar este registro?");
+    var delBtn = confirm('¿Está seguro que desea guardar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.createNewInmunizacion(x);
-      } else if (x.id != "") {
+      } else if (x.id != '') {
         this.firestoreService.updateDoc(
           `users/${this.uid}/inmunizaciones/`,
           x.id,
@@ -360,17 +360,17 @@ export class HistoriaComponent implements OnInit {
 
   addTableMedicaciones() {
     const obj = {
-      id: "",
-      nombre: "nuevo",
-      fechaInicio: "nuevo",
+      id: '',
+      nombre: 'nuevo',
+      fechaInicio: 'nuevo',
     };
     this.medicaciones.push(obj);
   }
 
   deleteRowMedicaciones(x: Medicacion, i: any) {
-    var delBtn = confirm("¿Está seguro de eliminar este registro?");
+    var delBtn = confirm('¿Está seguro de eliminar este registro?');
     if (delBtn == true) {
-      if (x.id == "") {
+      if (x.id == '') {
         this.medicaciones.splice(i, 1);
         return;
       }
@@ -379,11 +379,11 @@ export class HistoriaComponent implements OnInit {
   }
 
   updateRowMedicaciones(x: Medicacion) {
-    var delBtn = confirm("¿Está seguro que desea guardar este registro?");
+    var delBtn = confirm('¿Está seguro que desea guardar este registro?');
     if (delBtn == true) {
       if (this.isMedicacionValid(x)) {
         this.createNewMedicacion(x);
-      } else if (x.id != "") {
+      } else if (x.id != '') {
         this.firestoreService.updateDoc(
           `users/${this.uid}/medicaciones/`,
           x.id,
@@ -399,11 +399,11 @@ export class HistoriaComponent implements OnInit {
 
   isMedicacionValid(x: Medicacion): boolean {
     return (
-      x.nombre != "nuevo" &&
-      x.nombre != "" &&
-      x.fechaInicio != "nuevo" &&
-      x.fechaInicio != "" &&
-      x.id == ""
+      x.nombre != 'nuevo' &&
+      x.nombre != '' &&
+      x.fechaInicio != 'nuevo' &&
+      x.fechaInicio != '' &&
+      x.id == ''
     );
   }
 

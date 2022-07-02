@@ -14,9 +14,20 @@
           <td lass="sorting_1">{{ item.fechaEmision }}</td>
           <td lass="sorting_1">{{ item.medico }}</td>
           <td lass="sorting_1">
-            <button (click)="setUrl(item.url)" class="btn btn-datatable btn-icon btn-transparent-dark mr-2">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 6L9 17L4 12" stroke="black" stroke-width="2" stroke-linecap="round"
+            <button
+              (click)="setUrl(item.url)"
+              class="btn btn-datatable btn-icon btn-transparent-dark mr-2">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 6L9 17L4 12"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg>
             </button>
@@ -29,4 +40,8 @@
   </div>
 </div>
 
-<iframe *ngIf="urlReceta !== ''" [src]="this.urlReceta | safe" width="100%" height="500px">
+<iframe
+  *ngIf="urlReceta !== ''"
+  [src]="this.urlReceta | safe"
+  width="100%"
+  height="500px"></iframe>

@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { AngularFirestore } from "@angular/fire/compat/firestore";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class FirestoreService {
   constructor(private firestore: AngularFirestore) {}
@@ -13,7 +13,7 @@ export class FirestoreService {
       this.firestore
         .collection(path)
         .add(data)
-        .then((docRef) => {
+        .then(docRef => {
           docRef.update({ id: docRef.id });
         });
     } catch (e) {}

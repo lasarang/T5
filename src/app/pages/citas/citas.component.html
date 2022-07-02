@@ -18,10 +18,17 @@
         <tr *ngFor="let item of citas; let i = index">
           <td>
             <svg height="40" width="40">
-              <circle cx="20" cy="20" r="10" 
-                [style.fill]="{'Pendiente': 'rgb(51, 108, 251)', 
-                'En proceso':  'rgb(52, 238, 174)',
-                'Finalizado': 'rgb(255, 126, 119)'}[item.estado]" />
+              <circle
+                cx="20"
+                cy="20"
+                r="10"
+                [style.fill]="
+                  {
+                    Pendiente: 'rgb(51, 108, 251)',
+                    'En proceso': 'rgb(52, 238, 174)',
+                    Finalizado: 'rgb(255, 126, 119)'
+                  }[item.estado]
+                " />
               Sorry, your browser does not support inline SVG.
             </svg>
           </td>

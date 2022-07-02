@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { switchMap } from "rxjs";
-import { AuthService } from "src/app/services/auth/auth.service";
-import { FirestoreService } from "src/app/services/firestore/firestore.service";
-import { Examen } from "../../models/models";
+import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { FirestoreService } from 'src/app/services/firestore/firestore.service';
+import { Examen } from '../../models/models';
 
 @Component({
-  selector: "app-resultados",
-  templateUrl: "./resultados.component.html",
+  selector: 'app-resultados',
+  templateUrl: './resultados.component.html',
 })
 export class ResultadosComponent implements OnInit {
   examenes: Examen[] = [];
-  urlResultado: string = "";
+  urlResultado: string = '';
 
   constructor(
     private authService: AuthService,
@@ -24,7 +24,7 @@ export class ResultadosComponent implements OnInit {
   private loadExamenes() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/resultados/`
@@ -34,7 +34,7 @@ export class ResultadosComponent implements OnInit {
           }
         })
       )
-      .subscribe((examenes) => {
+      .subscribe(examenes => {
         this.examenes = examenes as Examen[];
       });
   }

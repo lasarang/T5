@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { switchMap } from "rxjs";
-import { AuthService } from "src/app/services/auth/auth.service";
-import { FirestoreService } from "src/app/services/firestore/firestore.service";
-import { Orden } from "../../models/models";
+import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { FirestoreService } from 'src/app/services/firestore/firestore.service';
+import { Orden } from '../../models/models';
 
 @Component({
-  selector: "app-ordenes",
-  templateUrl: "./ordenes.component.html",
+  selector: 'app-ordenes',
+  templateUrl: './ordenes.component.html',
 })
 export class OrdenesComponent implements OnInit {
   ordenes: Orden[] = [];
-  urlOrden: string = "";
+  urlOrden: string = '';
 
   constructor(
     private authService: AuthService,
@@ -24,7 +24,7 @@ export class OrdenesComponent implements OnInit {
   private loadOrdenes() {
     this.authService.userData
       .pipe(
-        switchMap((auth) => {
+        switchMap(auth => {
           if (auth) {
             return this.firestoreService.getCollection(
               `users/${auth.uid}/ordenes/`
@@ -34,7 +34,7 @@ export class OrdenesComponent implements OnInit {
           }
         })
       )
-      .subscribe((ordenes) => {
+      .subscribe(ordenes => {
         this.ordenes = ordenes as Orden[];
       });
   }
