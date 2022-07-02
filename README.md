@@ -116,6 +116,7 @@ This module will show the results of the tests that patients have had.
 2.	Click on the send button.
 3.	The browser will show a confirmation message, click OK.
 4.	If the idOrder is valid, then click in Show button, the results will be display into a new tab. But, if the entered idOrder is wrong, a warning message will be shown. Keep in mind that the input id need to be clean from both sides with no white-spaces.
+![alt text](https://github.com/lasarang/T5/blob/main/assets/results.png?raw=true)
 
 #### Consultation
 ######  Banner
