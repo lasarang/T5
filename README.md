@@ -23,7 +23,7 @@ It is a Web Application that has two roles, the first is to be used as a Landing
 
 ## Acknowledgements
 
- - [Carlos Mera](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Carlos Mera]
 
 
 ## Table of Contents
