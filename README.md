@@ -125,6 +125,7 @@ The patient will fill in the fields with basic information, and will also choose
 1. Fill the form, do not care about errors. There were validations for a correct fill. If there is a wrong field, the send button won't be enable.
 2. Click on the send button and OK on the confirmation message.
 3. Now, you create a new consultation request. Just have to wait a few days for the receive the answer.
+![alt text](https://github.com/lasarang/T5/blob/main/assets/consultation.png?raw=true)
 
 #### Q&A
 ######  Banner
