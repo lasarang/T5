@@ -45,6 +45,7 @@ Then run `ng s` to build and executes the app using a port. This url is usually 
 But if you need to deploy the app remotely. Follow the next steps.
 
 First enter to your Firebase console project settings `https://console.firebase.google.com/u/1/project/medical-app-8cdb7/settings/general/web:OTQ5NTY1M2ItNjc0Yi00ZDg1LWFiNDktMWI3MDdmMGI1MzRk`
+![alt text](https://github.com/lasarang/T5/blob/main/assets/remote_deploy_1.png?raw=true)
 
 Once you're logged, in the section 'Your apps' select 'Medical App' and and make sure that in 'Linked Firebase Hosting' is selected with `medical-app-8cdb7`.
 
