@@ -87,7 +87,7 @@ Among the specialties offered by the Medical Center are:
 - Physical Rehabilitation
 
 #### Lab Tests
-Este módulo mostrará los tipos de exámenes médicos que pueden realizarse los pacientes en el Centro.
+This module will show the types of medical examinations that patients can undergo at the Medical Center.
 ######  Banner
 You will have a button with which you have the option to Download Request. This will download a document in which the patient will fill in the necessary fields and select the tests he/she wishes to undergo.
 ######  List of lab tests
