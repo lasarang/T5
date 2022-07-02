@@ -2,6 +2,7 @@
 
 It is a Web Application that has two roles, the first is to be used as a Landing Page for new customers to learn about the services that Medical Center offers. Also, it is an Electronic Medical Record (EMR) that makes it easy for doctors to maintain patient records and medical history so that they are accessible at all times regardless of the device they are using.
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/medical-app.png?raw=true)
 
 
 ## Technologies
