@@ -159,7 +159,7 @@ This section allows the registration of a patient to access the Electronic Medic
 
  ![alt text](https://github.com/lasarang/T5/blob/main/assets/signup.png?raw=true)
 
-###Electronic Medical Record (EMR)
+### Electronic Medical Record (EMR)
 There are eight sections within the platform.
 #### Home 
 ###### Basic Information
