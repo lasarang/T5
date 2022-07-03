@@ -150,6 +150,7 @@ This section allows the registration of a patient to access the Electronic Medic
  ![alt text](https://github.com/lasarang/T5/blob/main/assets/signup.png?raw=true)
 
 ###Electronic Medical Record (EMR)
+There are eight sections within the platform.
 #### Home 
 ###### Basic Information
 Here is the basic and legal information of a patient as a citizen
@@ -159,14 +160,24 @@ Here is the personal, medical and private information of a patient as a client
 Here is a list of important and emergency contacts of a patient
 
 #### Consultation Appointments
+
 ###### List of Consultation Appointments
+There are 3 colors to show the status of an appointment. 
+- The blue color represents an appointment that would take place in the future.  
+- The turquoise color means that an appointment is in process.   
+- Red indicates that an appointment has already been finalized. 
 
 #### Lab Test Orders
 ###### List of Lab Tests Orders
+There are 3 colors to show the status of an order.  
+- The blue color represents an order that would be given in the future.  
+- The turquoise color means that an order is in process.   
+- Red indicates that an order has already been finalized.
 ###### Lab Test Order Viewer
-
+By clicking on the citation icon, which is in the image above, the order issued by the physician is displayed. This way the patient can visualize it in a clearer way. 
 
 #### Medical History
+En las secciones del historial, desde la a hasta la f, el paciente puede añadir información relevante a su salud o a sus antecedentes. De la misma manera, puede actualizar su información o eliminar datos. 
 ###### List of personal history
 ###### List of familiar history
 ###### List of surgeries
@@ -176,13 +187,26 @@ Here is a list of important and emergency contacts of a patient
 
 #### Lab Test Results
 ###### List of Lab Tests Results
+You can see the name of the test, the name of the person who ordered it and the date it was ordered. 
 ###### Lab Test Result Viewer
+Clicking on the citation icon displays a document containing the result of the test that the patient wishes to view. 
 
 #### Medical images
 ###### List of Medical Images
+In this section the patient will be able to see the images that have been taken, such as X-rays, ultrasounds, biopsies, among others. In addition, he/she will be able to read an interpretation of each image. 
+
+#### Prescriptions
+###### List of Presciptions
+Here you can view the date on which a prescription was written, as well as the doctor who issued it.   
+###### Prescription Viewer
+By clicking on the citation icon, the prescription is displayed for the patient to view or even download, if desired. 
 
 #### Medical Certificates
 ###### List of Medical Certificates
+In this section you can see the information of the certificates, such as the date, the type of certificate and by whom it was issued. 
+
 ###### Medical Certificates Viewer
+Also, by clicking on the citation icon, the medical certificate is displayed, which can be viewed or downloaded by the patient.
 
 #### Log Out
+By clicking on the "logout" button, the patient logs out. 
