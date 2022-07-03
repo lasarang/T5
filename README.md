@@ -24,13 +24,13 @@ It is a Web Application that has two roles, the first is to be used as a Landing
 
 ## Acknowledgements
 
- - [Carlos Mera]
+ - Carlos Mera
 
 
 ## Table of Contents
 
-1. [Installation guide](#installation-guide)
-2. [User Manual](#my-second-title)
+1. [Installation Guide](#installation-guide)
+2. [User Manual](#user-manual)
 
 
 ## Installation guide
@@ -159,6 +159,9 @@ Here is the personal, medical and private information of a patient as a client
 ###### Contacts
 Here is a list of important and emergency contacts of a patient
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/home.png?raw=true)
+
+
 #### Consultation Appointments
 
 ###### List of Consultation Appointments
@@ -166,6 +169,9 @@ There are 3 colors to show the status of an appointment.
 - The blue color represents an appointment that would take place in the future.  
 - The turquoise color means that an appointment is in process.   
 - Red indicates that an appointment has already been finalized. 
+
+![alt text](https://github.com/lasarang/T5/blob/main/assets/appointments.png?raw=true)
+
 
 #### Lab Test Orders
 ###### List of Lab Tests Orders
@@ -176,6 +182,9 @@ There are 3 colors to show the status of an order.
 ###### Lab Test Order Viewer
 By clicking on the citation icon, which is in the image above, the order issued by the physician is displayed. This way the patient can visualize it in a clearer way. 
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/labTestOrders.png?raw=true)
+
+
 #### Medical History
 In the history sections, a through f, the patient can add information relevant to his/her health or background. In the same way, they can update their information or delete data. List history data as:
 - Personal history
@@ -185,15 +194,23 @@ In the history sections, a through f, the patient can add information relevant t
 - Vaccines
 - Medications
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/history.png?raw=true)
+
+
 #### Lab Test Results
 ###### List of Lab Tests Results
 You can see the name of the test, the name of the person who ordered it and the date it was ordered. 
 ###### Lab Test Result Viewer
 Clicking on the citation icon displays a document containing the result of the test that the patient wishes to view. 
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/labTestResults.png?raw=true)
+
+
 #### Medical images
 ###### List of Medical Images
 In this section the patient will be able to see the images that have been taken, such as X-rays, ultrasounds, biopsies, among others. In addition, he/she will be able to read an interpretation of each image. 
+
+![alt text](https://github.com/lasarang/T5/blob/main/assets/medical_images.png?raw=true)
 
 #### Prescriptions
 ###### List of Presciptions
@@ -201,12 +218,16 @@ Here you can view the date on which a prescription was written, as well as the d
 ###### Prescription Viewer
 By clicking on the citation icon, the prescription is displayed for the patient to view or even download, if desired. 
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/prescriptions.png?raw=true)
+
 #### Medical Certificates
 ###### List of Medical Certificates
 In this section you can see the information of the certificates, such as the date, the type of certificate and by whom it was issued. 
 
 ###### Medical Certificates Viewer
 Also, by clicking on the citation icon, the medical certificate is displayed, which can be viewed or downloaded by the patient.
+
+![alt text](https://github.com/lasarang/T5/blob/main/assets/certificates.png?raw=true)
 
 #### Log Out
 By clicking on the "logout" button, the patient logs out. 
