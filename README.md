@@ -39,13 +39,14 @@ It is a Web Application that has two roles, the first is to be used as a Landing
 
 ## Installation guide
 
+#### Local Use
 After cloning this repository. 
 
 Inside the directory, run `npm i` to install dependencies of the project.
 
 Then run `ng s` to build and executes the app using a port. This url is usually `http://localhost:4200/`
 
-
+#### Remote Deploy
 But if you need to deploy the app remotely. Follow the next steps.
 
 First enter to your Firebase console project settings `https://console.firebase.google.com/u/1/project/medical-app-8cdb7/settings/general/web:OTQ5NTY1M2ItNjc0Yi00ZDg1LWFiNDktMWI3MDdmMGI1MzRk`
@@ -73,7 +74,7 @@ Finally, the FirebaseExtended/action-hosting-deploy@v0 would verify the Deployin
 
 ![alt text](https://github.com/lasarang/T5/blob/main/assets/remote_deploy_5.png?raw=true)
 ## User Manual
-###Landing Page
+### Landing Page
 #### Cover page
 ######  Header
 After visiting the website, the Narcisa de Jesus Medical Center header will immediately appear
@@ -151,7 +152,7 @@ The login allows a registered patient to access the Electronic Medical Report.
  ![alt text](https://github.com/lasarang/T5/blob/main/assets/login.png?raw=true)
 
 #### Sign up
-######New Patient Register Form
+###### New Patient Register Form
 This section allows the registration of a patient to access the Electronic Medical Report.
 1. Fill the form, do not care about errors. There were validations for a correct fill. If there is a wrong field, the send button won't be enable. Choose a right password with minimum 6 characters and maximum 12.
 2. Click on the Save button. Then will show little success message, and the new patient's profile will appear.
