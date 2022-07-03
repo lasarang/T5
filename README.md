@@ -13,6 +13,10 @@ It is a Web Application that has two roles, the first is to be used as a Landing
 
 **Services:** Authentication, Firestore DB, Storage, Hosting
 
+**Testing:** Jasmine, karma.js
+
+**Coding stanards:** Prettier, ESLint
+
 ## Authors
 
 - [@Luis A. Sarango-Parrales](https://www.github.com/lasarang)
@@ -93,6 +97,8 @@ Among the specialties offered by the Medical Center are:
 - Traumatology
 - Physical Rehabilitation
 
+![alt text](https://github.com/lasarang/T5/blob/main/assets/specialties.png?raw=true)
+
 #### Lab Tests
 This module will show the types of medical examinations that patients can undergo at the Medical Center.
 ######  Banner
@@ -107,6 +113,9 @@ Among the tests offered by the Medical Center are:
 - Parasitology
 - Bacteriology
 - Toxicology
+
+![alt text](https://github.com/lasarang/T5/blob/main/assets/labTest.png?raw=true)
+
 
 #### Results
 This module will show the results of the tests that patients have had.
