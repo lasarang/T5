@@ -138,12 +138,16 @@ The login allows a registered patient to access the Electronic Medical Report.
 
  1. Fill the form with valid email and password. Then, the patient's profile will appear.
  2. Its possible a password change if you have forgotten it, to do this you must click on forgot my password.
+ 
+ ![alt text](https://github.com/lasarang/T5/blob/main/assets/login.png?raw=true)
 
 #### Sign up
 ######New Patient Register Form
 This section allows the registration of a patient to access the Electronic Medical Report.
 1. Fill the form, do not care about errors. There were validations for a correct fill. If there is a wrong field, the send button won't be enable. Choose a right password with minimum 6 characters and maximum 12.
 2. Click on the Save button. Then will show little success message, and the new patient's profile will appear.
+
+ ![alt text](https://github.com/lasarang/T5/blob/main/assets/signup.png?raw=true)
 
 ###Electronic Medical Record (EMR)
 #### Home 
