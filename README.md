@@ -177,13 +177,13 @@ There are 3 colors to show the status of an order.
 By clicking on the citation icon, which is in the image above, the order issued by the physician is displayed. This way the patient can visualize it in a clearer way. 
 
 #### Medical History
-En las secciones del historial, desde la a hasta la f, el paciente puede añadir información relevante a su salud o a sus antecedentes. De la misma manera, puede actualizar su información o eliminar datos. 
-###### List of personal history
-###### List of familiar history
-###### List of surgeries
-###### List of Allergies
-###### List of Vaccines
-###### List of Medications
+In the history sections, a through f, the patient can add information relevant to his/her health or background. In the same way, they can update their information or delete data. List history data as:
+- Personal history
+- Familiar history
+- Surgeries
+- Allergies
+- Vaccines
+- Medications
 
 #### Lab Test Results
 ###### List of Lab Tests Results
