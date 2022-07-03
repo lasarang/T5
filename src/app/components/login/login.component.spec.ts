@@ -35,8 +35,8 @@ describe('LoginComponent', () => {
     expect(component.unsuccessAlert).toBeFalse();
   });
 
-  it(' Failed login, worng password ', () =>{
-    component.email ='mauricioortizlascano@gmail.com';
+  it(' Failed login, worng password ', () => {
+    component.email = 'mauricioortizlascano@gmail.com';
     component.password = '12345679';
 
     const btn = fixture.debugElement.query(By.css('button.btn-lg'));
@@ -45,8 +45,8 @@ describe('LoginComponent', () => {
     expect(component.unsuccessAlert).toBeTrue();
   });
 
-  it(' Failed login, invalid email ', () =>{
-    component.email ='@gmail.com';
+  it(' Failed login, invalid email ', () => {
+    component.email = '@gmail.com';
     component.password = 'error123';
 
     const btn = fixture.debugElement.query(By.css('button.btn-lg'));
@@ -55,8 +55,8 @@ describe('LoginComponent', () => {
     expect(component.unsuccessAlert).toBeTrue();
   });
 
-  it(' Failed login, email not registered ', () =>{
-    component.email ='noregistered@gmail.com';
+  it(' Failed login, email not registered ', () => {
+    component.email = 'noregistered@gmail.com';
     component.password = 'error123';
 
     const btn = fixture.debugElement.query(By.css('button.btn-lg'));

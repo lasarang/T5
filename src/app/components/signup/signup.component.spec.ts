@@ -54,13 +54,15 @@ describe('SignupComponent', () => {
   });
 
   it('Must not exceed length in Nombres', () => {
-    component.newUser.nombres = 'Emiliano Salidoooooooooooooooooooooooooooooooooooooo';
+    component.newUser.nombres =
+      'Emiliano Salidoooooooooooooooooooooooooooooooooooooo';
     const btn = fixture.debugElement.query(By.css('button.btn-lg'));
     btn.nativeElement.click();
   });
 
   it('Must not exceed length in Apellidos', () => {
-    component.newUser.apellidos = 'del Pozo Oscurooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo';
+    component.newUser.apellidos =
+      'del Pozo Oscurooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo';
     const btn = fixture.debugElement.query(By.css('button.btn-lg'));
     btn.nativeElement.click();
   });
@@ -128,5 +130,5 @@ describe('SignupComponent', () => {
     const btn = fixture.debugElement.query(By.css('button.btn-lg'));
     btn.nativeElement.click();
     expect(component.successAlert).toBeTrue();
-  })
+  });
 });

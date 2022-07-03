@@ -1,6 +1,11 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*", ".angular/*", "node_modules/*"],
+  "ignorePatterns": [
+    "projects/**/*",
+    ".angular/*",
+    "node_modules/*",
+    "Communications/*"
+  ],
   "overrides": [
     {
       "files": ["*.ts"],
